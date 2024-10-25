@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Tab title -->
+    <title>izayatiji</title>
+    
+    <!-- Favicon (Tab Icon) -->
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/thumbnails/027/604/941/small/red-cross-icon-button-png.png" type="image/png">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Official website of izayatiji. Learn more about schizophrenia and related content.">
+    <meta name="keywords" content="izayatiji, izaya, izaya tiji, izayatiji.com, schizophrenia, mental health">
+    <meta name="author" content="izayatiji">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        /* Animation for Page Load */
+        .fade-in {
+            animation: fadeInFromLeft 1s ease forwards;
+        }
+
+        /* Keyframes for Blur & Pan-in from Slight Left */
+        @keyframes fadeInFromLeft {
+            0% {
+                transform: translateX(-15%);
+                filter: blur(8px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        /* Delay Transition for Each Item */
+        .word, .phonetic, .definition, .domain {
+            opacity: 0;
+            animation: fadeInFromLeft 1s ease forwards;
+        }
+
+        .word {
+            animation-delay: 0ms;
+        }
+
+        .phonetic {
+            animation-delay: 100ms;
+        }
+
+        .definition {
+            animation-delay: 200ms;
+        }
+
+        .domain {
+            animation-delay: 300ms;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: left;
+            line-height: 1.01; /* 1% line spacing */
+        }
+
+        .word {
+            font-size: 4rem;
+        }
+
+        .noun {
+            color: red;
+        }
+
+        .phonetic {
+            font-style: italic;
+            color: gray;
+        }
+
+        .definition {
+            margin: 20px 0;
+        }
+
+        .medical {
+            font-weight: bold;
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .domain {
+            color: darkgray;
+            margin-top: 20px;
+        }
+
+        .domain a {
+            text-decoration: none;
+            color: darkgray;
+        }
+
+        .domain a:hover {
+            text-decoration: underline;
+        }
+
+        /* Transition for Clicking Links */
+        body.fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="word fade-in">
+            schizophrenia <span class="noun">noun</span>
+        </div>
+        <div class="phonetic fade-in">schitz·o·phre·nia</div>
+        <div class="definition fade-in">
+            <span class="medical">medical</span>:
+            a mental illness that is characterized by disturbances in thought (such as delusions), perception (such as hallucinations), and behavior (such as disorganized speech or catatonic behavior),
+            by a loss of emotional responsiveness and extreme apathy, and by noticeable deterioration in the level of functioning in everyday life.
+        </div>
+        <div class="domain fade-in">
+            <a href="https://izayatiji.com/domain" target="_self">domain</a>
+        </div>
+    </div>
+
+    <script>
+        // Apply the fade-in class when the page loads
+        window.addEventListener('load', function () {
+            document.body.classList.add('fade-in');
+        });
+
+        // Add fade-out transition when clicking a link
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent immediate navigation
+                const href = this.getAttribute('href');
+
+                document.body.classList.add('fade-out'); // Start fade-out transition
+
+                setTimeout(() => {
+                    window.location.href = href; // Redirect after the animation
+                }, 1000); // Match the animation duration
+            });
+        });
+    </script>
+</body>
+</html>

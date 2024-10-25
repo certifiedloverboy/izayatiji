@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Tab title -->
+    <title>izayatiji - redirect</title>
+    
+    <!-- Favicon (Tab Icon) -->
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/thumbnails/027/604/941/small/red-cross-icon-button-png.png" type="image/png">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="You are being redirected to Instagram.">
+    <meta name="keywords" content="izayatiji, redirect, Instagram, swaggerswagger2
+, social media">
+    <meta name="author" content="izayatiji">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        /* Animation for Page Load */
+        .fade-in {
+            animation: fadeInFromLeft 1s ease forwards;
+        }
+
+        /* Keyframes for Blur & Pan-in from Slight Left */
+        @keyframes fadeInFromLeft {
+            0% {
+                transform: translateX(-15%);
+                filter: blur(8px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        /* Delay Transition for Each Item */
+        .word, .phonetic, .definition, .redirect-message {
+            opacity: 0;
+            animation: fadeInFromLeft 1s ease forwards;
+        }
+
+        .word {
+            animation-delay: 0ms;
+        }
+
+        .phonetic {
+            animation-delay: 100ms;
+        }
+
+        .definition {
+            animation-delay: 200ms;
+        }
+
+        .redirect-message {
+            animation-delay: 300ms;
+            color: darkgray;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: left;
+            line-height: 1.01; /* 1% line spacing */
+        }
+
+        .word {
+            font-size: 4rem;
+        }
+
+        .noun {
+            color: red;
+        }
+
+        .phonetic {
+            font-style: italic;
+            color: gray;
+        }
+
+        .definition {
+            margin: 20px 0;
+        }
+
+        .definition-box {
+            font-weight: bold;
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        /* Transition for Clicking Links */
+        body.fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="word fade-in">
+            redirect <span class="noun">verb</span>
+        </div>
+        <div class="phonetic fade-in">re·di·rect</div>
+        <div class="definition fade-in">
+            <span class="definition-box">definition</span>:
+            direct (something) to a new or different place or purpose.
+        </div>
+        <div class="redirect-message fade-in">
+            YOUR BEING REDIRECTED
+        </div>
+    </div>
+
+    <script>
+        // Apply the fade-in class when the page loads
+        window.addEventListener('load', function () {
+            document.body.classList.add('fade-in');
+
+            // Redirect to Instagram after 2 seconds
+            setTimeout(function() {
+                document.body.classList.add('fade-out'); // Start fade-out transition
+                setTimeout(function() {
+                    window.location.href = "https://instagram.com/swaggerswagger2";
+                }, 1000); // Delay to match the fade-out animation
+            }, 2000); // Wait for 2 seconds before redirecting
+        });
+    </script>
+</body>
+</html>
