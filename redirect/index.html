@@ -13,8 +13,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="You are being redirected to Instagram.">
-    <meta name="keywords" content="izayatiji, redirect, Instagram, swaggerswagger2
-, social media">
+    <meta name="keywords" content="izayatiji, redirect, Instagram, swaggerswagger2, social media">
     <meta name="author" content="izayatiji">
     
     <style>
@@ -121,6 +120,14 @@
             100% {
                 transform: translateX(100%);
                 opacity: 0;
+            }
+        }
+
+        /* Apply 20% zoom for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                transform: scale(0.8); /* 20% reduction */
+                transform-origin: center top;
             }
         }
 

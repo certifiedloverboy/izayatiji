@@ -147,6 +147,14 @@
             }
         }
 
+        /* Apply 20% zoom for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                transform: scale(0.8); /* 20% reduction */
+                transform-origin: center top;
+            }
+        }
+
     </style>
 </head>
 <body>
